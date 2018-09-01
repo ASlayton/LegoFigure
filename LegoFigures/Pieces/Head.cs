@@ -8,5 +8,11 @@ namespace LegoFigures.Pieces
     {
         public Head() : base("Head")
         { }
+
+        // Add a method to determine the actions available with this part type
+        public override void GetFunctionality()
+        {
+            Console.WriteLine($"{ItemType}");
+        }
     }
 }

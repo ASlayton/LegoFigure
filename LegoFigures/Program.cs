@@ -18,7 +18,12 @@ namespace LegoFigures
             {
                 piece.GetPiece();
             }
+            foreach (var piece in figureItems)
+            {
+                piece.GetFunctionality();
+            }
             Console.WriteLine("Press Enter to Escape");
+            Console.ReadLine();
         }
     }
 }

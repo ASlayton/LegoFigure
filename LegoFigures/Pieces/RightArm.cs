@@ -9,5 +9,15 @@ namespace LegoFigures.Pieces
         public RightArm() : base("Right Arm")
         {
         }
+
+        // Add a method to determine the actions available with this part type
+        public override void GetFunctionality()
+        {
+            if (ItemType == "")
+            {
+
+            }
+            Console.WriteLine($"{ItemType}");
+        }
     }
 }

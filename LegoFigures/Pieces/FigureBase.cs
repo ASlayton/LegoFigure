@@ -8,7 +8,7 @@ namespace LegoFigures.Pieces
     {
         protected readonly string _whichPiece;
         public string WhichPiece { get; }
-
+        public string ItemType { get; protected set; }
         public FigureBase(string whichPiece)
         {
             _whichPiece = whichPiece;
@@ -17,34 +17,28 @@ namespace LegoFigures.Pieces
         public virtual void GetPiece()
         {
             Console.WriteLine($"What type of {_whichPiece} do you want?");
-            Console.WriteLine("Press 1 for metallic");
-            Console.WriteLine("Press 2 for Generic");
-            Console.WriteLine("Press 3 for Horse");
+            Console.WriteLine("Press 1 for generic");
+            Console.WriteLine("Press 2 for metallic");
+            Console.WriteLine("Press 3 for fancy");
             var pieceType = Console.ReadLine();
-            var itemType = "";
             if (pieceType == "1")
             {
-                itemType = "generic";
+                ItemType = "generic";
             }
             else if (pieceType == "2")
             {
-                itemType = "metallic";
+                ItemType = "metallic";
             }
             else if (pieceType == "3")
             {
-                itemType = "fancy";
+                ItemType = "fancy";
             }
             else
             {
-                itemType = "Asses";
+                Console.WriteLine($"You have decided to forego a {_whichPiece}. That's awkward but totally your decision.");
             }
-
-            PrintPiece(itemType);
         }
 
-        public void PrintPiece(string item)
-        {
-            Console.WriteLine($"You have a {item} {_whichPiece}");
-        }
+        public abstract void GetFunctionality();
     }
 }
